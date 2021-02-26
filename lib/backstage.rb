@@ -1,10 +1,6 @@
-class Backstage
-  attr_reader :name, :days_remaining, :quality
-  def initialize(name:, days_remaining:, quality:)
-    @name = name
-    @days_remaining = days_remaining
-    @quality = quality
-  end
+require_relative './item'
+
+class Backstage < Item
 
   def tick
     if days_remaining > 10

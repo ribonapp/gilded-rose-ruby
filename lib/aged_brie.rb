@@ -1,11 +1,6 @@
-class AgedBrie
-  attr_reader :name, :days_remaining, :quality
-  def initialize(name:, days_remaining:, quality:)
-    @name = name
-    @days_remaining = days_remaining
-    @quality = quality
-  end
+require_relative './item'
 
+class AgedBrie < Item
   def tick
     if days_remaining > 0
       @quality = @quality + 1
@@ -14,7 +9,7 @@ class AgedBrie
     end
     @days_remaining = @days_remaining - 1
 
-    if @quality >= 50
+    if quality >= 50
       @quality = 50
     end
   end
