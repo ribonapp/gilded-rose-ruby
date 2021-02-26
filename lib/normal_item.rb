@@ -1,9 +1,12 @@
 require_relative './item'
+require_relative './tickable'
 
 class NormalItem < Item
+  include Tickable
+
   def tick
     if quality > 0
-      @quality = @quality - 1 # itens normais
+      @quality = @quality - 1
     end
 
 

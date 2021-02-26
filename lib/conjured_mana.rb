@@ -1,6 +1,9 @@
 require_relative './item'
+require_relative './tickable'
 
 class ConjuredMana < Item
+  include Tickable
+
   def tick
     if days_remaining <= 0
       if quality > 0
