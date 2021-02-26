@@ -2,6 +2,7 @@ require_relative './aged_brie'
 require_relative './backstage'
 require_relative './sulfuras'
 require_relative './normal_item'
+require_relative './conjured_mana'
 
 class GildedRose
   attr_reader :item
@@ -25,6 +26,8 @@ class GildedRose
       @item = Backstage.new(params)
     when SULFURAS
       @item = Sulfuras.new(params)
+    when CONJURED_MANA
+      @item = ConjuredMana.new(params)
     else
       @item = NormalItem.new(params)
     end
